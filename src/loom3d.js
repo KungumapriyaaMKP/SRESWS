@@ -80,7 +80,7 @@ vec3 clothNormal(vec3 p) {
 }
 `;
 
-function makeClothMaterial(maps, palette, maxAniso) {
+function makeClothMaterial(maps, palette, maxAniso, isSoftware = false) {
   const uniforms = {
     uTime: { value: 0 },
     uUnroll: { value: 0 },
@@ -98,20 +98,25 @@ function makeClothMaterial(maps, palette, maxAniso) {
   const orm = new THREE.CanvasTexture(maps.orm);
   orm.anisotropy = maxAniso;
 
-  const mat = new THREE.MeshPhysicalMaterial({
+  const baseOpts = {
     map,
     roughnessMap: orm,
     metalnessMap: orm,
     roughness: 1,
     metalness: 1,
-    sheen: 1,
-    sheenRoughness: 0.28,
-    sheenColor: new THREE.Color(palette.sheen),
-    anisotropy: 0.65,
-    anisotropyRotation: HALF_PI,
     side: THREE.DoubleSide,
     envMapIntensity: 0.92,
-  });
+  };
+  const mat = isSoftware
+    ? new THREE.MeshStandardMaterial(baseOpts)
+    : new THREE.MeshPhysicalMaterial({
+        ...baseOpts,
+        sheen: 1,
+        sheenRoughness: 0.28,
+        sheenColor: new THREE.Color(palette.sheen),
+        anisotropy: 0.65,
+        anisotropyRotation: HALF_PI,
+      });
 
   mat.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
@@ -471,7 +476,7 @@ export class Loom {
     key.position.set(-3.2, 4.4, 5.2);
     this.rim = new THREE.DirectionalLight(0xff8e5a, 1.35);
     this.rim.position.set(4.5, 2.0, -4.5);
-    const fill = new THREE.HemisphereLight(0xffe7c7, 0x2a0a10, 0.38);
+    const fill = (this.fill = new THREE.HemisphereLight(0xffe7c7, 0x2a0a10, 0.38));
     this.spot = new THREE.PointLight(0xffc77a, 1.1, 11, 1.8);
     this.spot.position.set(0, 2.0, 2.8);
     this.accentLight = new THREE.PointLight(0xffb454, 0.95, 10, 1.8);
@@ -480,6 +485,11 @@ export class Loom {
   }
 
   _setupEnvironment() {
+    if (this.isSoftware) {
+      // Software WebGL compiles PMREM convolution shaders slowly on CPU; compensate with stronger studio fill
+      this.fill.intensity = 0.72;
+      return;
+    }
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     const envTex = createStudioEnvTexture();
     this.scene.environment = pmrem.fromEquirectangular(envTex).texture;
@@ -524,11 +534,6 @@ export class Loom {
       this.renderer.render(this.scene, this.camera);
       this.models[0].grp.visible = false;
     }
-    if (this.models[1]) {
-      this.models[1].grp.visible = true;
-      this.renderer.render(this.scene, this.camera);
-      this.models[1].grp.visible = false;
-    }
     this.renderer.setRenderTarget(null);
     warmRT.dispose();
     if (this.composer) this.composer.render(0.016);
@@ -547,7 +552,7 @@ export class Loom {
 
     const warmRT = new THREE.WebGLRenderTarget(16, 16);
 
-    // Frame A: upload & compile shared cloth shader + room geometry into 16x16 RT
+    // Warm shared cloth shader + room geometry into 16x16 RT
     if (this.sarees[0]) {
       this.sarees[0].group.visible = true;
       this.renderer.setRenderTarget(warmRT);
@@ -565,22 +570,12 @@ export class Loom {
       await nextFrame();
     }
 
-    // Warm full-statue shader variant in 16x16 RT
+    // Warm unified statue relief shader once in 16x16 RT
     if (this.models[0]) {
       this.models[0].grp.visible = true;
       this.renderer.setRenderTarget(warmRT);
       this.renderer.render(this.scene, this.camera);
       this.models[0].grp.visible = false;
-      this.renderer.setRenderTarget(null);
-      await nextFrame();
-    }
-
-    // Warm cameo-statue shader variant in 16x16 RT
-    if (this.models[1]) {
-      this.models[1].grp.visible = true;
-      this.renderer.setRenderTarget(warmRT);
-      this.renderer.render(this.scene, this.camera);
-      this.models[1].grp.visible = false;
       this.renderer.setRenderTarget(null);
       await nextFrame();
     }
@@ -658,7 +653,7 @@ export class Loom {
       for (let i = 0; i < SAREES.length; i++) {
         const p = SAREES[i];
         const maps = createSareeCanvases(p, texW);
-        const { mat, uniforms } = makeClothMaterial(maps, p, maxAniso);
+        const { mat, uniforms } = makeClothMaterial(maps, p, maxAniso, this.isSoftware);
         const mesh = new THREE.Mesh(geo, mat);
         mesh.frustumCulled = false;
         const group = new THREE.Group();
@@ -866,7 +861,7 @@ export class Loom {
 
     this.sarees = SAREES.map((p, i) => {
       const maps = createSareeCanvases(p, texW);
-      const { mat, uniforms } = makeClothMaterial(maps, p, maxAniso);
+      const { mat, uniforms } = makeClothMaterial(maps, p, maxAniso, this.isSoftware);
       const mesh = new THREE.Mesh(geo, mat);
       mesh.frustumCulled = false;
       const group = new THREE.Group();
@@ -897,7 +892,7 @@ export class Loom {
         uSeed: { value: i * 2.4 },
       };
 
-      const mat = new THREE.MeshPhysicalMaterial({
+      const baseOpts = {
         map: colorTex,
         displacementMap: depthTex,
         displacementScale: 0.34,
@@ -908,12 +903,17 @@ export class Loom {
         alphaTest: 0.08,
         roughness: 0.58,
         metalness: 0.06,
-        sheen: 0.65,
-        sheenRoughness: 0.38,
-        sheenColor: new THREE.Color(sp.sheen),
         side: THREE.DoubleSide,
         envMapIntensity: 0.72,
-      });
+      };
+      const mat = this.isSoftware
+        ? new THREE.MeshStandardMaterial(baseOpts)
+        : new THREE.MeshPhysicalMaterial({
+            ...baseOpts,
+            sheen: 0.65,
+            sheenRoughness: 0.38,
+            sheenColor: new THREE.Color(sp.sheen),
+          });
 
       mat.onBeforeCompile = (shader) => {
         Object.assign(shader.uniforms, uniforms);
@@ -929,7 +929,7 @@ export class Loom {
             `
           );
       };
-      mat.customProgramCacheKey = () => `saree-model-relief-${sp.sway > 0 ? 'full' : 'cameo'}`;
+      mat.customProgramCacheKey = () => 'saree-model-relief';
 
       const fig = new THREE.Mesh(new THREE.PlaneGeometry(sp.w, sp.h, segW, segH), mat);
       fig.frustumCulled = false;
