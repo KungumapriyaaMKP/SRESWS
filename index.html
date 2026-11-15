@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sumya Silks | Handwoven Kanjivaram, Banarasi and Mysore Silk Sarees</title>
+  <meta name="description" content="Sumya Silks is a heritage house of handwoven silk sarees. Pure mulberry silk, real zari and temple borders, woven by master weavers of Kanchipuram since 1962." />
+  <meta name="theme-color" content="#14070a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sumya Silks | Heritage Handwoven Silk Sarees" />
+  <meta property="og:description" content="Pure mulberry silk, real zari, temple borders. Woven by hand since 1962." />
+  <meta property="og:image" content="/images/kanjivaram-red.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" as="image" href="/frames/v1-lg/0001.webp" media="(min-width: 901px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/frames/v1-sm/0001.webp" media="(max-width: 900px)" fetchpriority="high" />
+</head>
+<body class="is-loading">
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <svg class="loader__mark" viewBox="0 0 64 64" width="74" height="74" fill="none">
+        <path class="draw" d="M32 8 C40 20 40 34 32 46 C24 34 24 20 32 8Z" />
+        <path class="draw" d="M32 46 C22 42 14 32 13 20 C22 24 29 33 32 46Z" />
+        <path class="draw" d="M32 46 C42 42 50 32 51 20 C42 24 35 33 32 46Z" />
+        <path class="draw" d="M14 52 H50" />
+        <path class="draw" d="M20 57 H44" />
+      </svg>
+      <p class="loader__brand">Sumya Silks</p>
+      <p class="loader__tamil" lang="ta">பட்டு</p>
+      <div class="loader__bar"><span id="loaderBar"></span></div>
+      <p class="loader__count"><span id="loaderCount">0</span><small>%</small></p>
+      <p class="loader__note">Preparing the looms</p>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="Sumya Silks home">
+      <svg viewBox="0 0 64 64" width="34" height="34" fill="none" aria-hidden="true">
+        <path d="M32 8 C40 20 40 34 32 46 C24 34 24 20 32 8Z" />
+        <path d="M32 46 C22 42 14 32 13 20 C22 24 29 33 32 46Z" />
+        <path d="M32 46 C42 42 50 32 51 20 C42 24 35 33 32 46Z" />
+        <path d="M14 52 H50" />
+      </svg>
+      <span class="nav__word">Sumya<em>Silks</em></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#loom" data-link>The Loom</a>
+      <a href="#heritage" data-link>Heritage</a>
+      <a href="#collections" data-link>Collections</a>
+      <a href="#craft" data-link>Craft</a>
+      <a href="#visit" data-link>Visit</a>
+    </nav>
+    <a href="#visit" class="btn btn--ghost nav__cta" data-link data-magnetic><span>Book a Viewing</span></a>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav>
+      <a href="#loom" data-link><small>I</small>The Loom</a>
+      <a href="#heritage" data-link><small>II</small>Heritage</a>
+      <a href="#collections" data-link><small>III</small>Collections</a>
+      <a href="#craft" data-link><small>IV</small>Craft</a>
+      <a href="#visit" data-link><small>V</small>Visit</a>
+    </nav>
+    <p class="menu__foot">14 Gandhi Road, Kanchipuram, Tamil Nadu</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ FILM SEQUENCE ============ -->
+    <section class="film" id="film" aria-label="A walk through the Sumya Silks showroom">
+      <div class="film__sticky">
+        <canvas class="film__canvas" id="filmCanvas"></canvas>
+        <div class="film__shade"></div>
+        <div class="film__grain"></div>
+
+        <div class="film__chapter is-center" data-range="0,0.11">
+          <p class="eyebrow">Est. 1962 &nbsp;/&nbsp; Kanchipuram</p>
+          <h1 class="display">
+            <span class="line"><span>Sumya</span></span>
+            <span class="line"><span><em>Silks</em></span></span>
+          </h1>
+          <p class="lede">A house of handwoven silk, where every saree carries the memory of the loom.</p>
+        </div>
+
+        <div class="film__chapter is-left" data-range="0.15,0.29">
+          <p class="eyebrow">Chapter I</p>
+          <h2 class="title">Step through<br /><em>carved teak doors</em></h2>
+          <p class="copy">Our showroom was built the way temples are built: by hand, in wood and stone, by craftsmen who have done this work for generations.</p>
+        </div>
+
+        <div class="film__chapter is-right" data-range="0.32,0.46">
+          <p class="eyebrow">Chapter II</p>
+          <h2 class="title">Twelve thousand<br /><em>sarees, folded by hand</em></h2>
+          <p class="copy">Shelf after shelf of pure mulberry silk, sorted by weave, by region and by the colour of a festival morning.</p>
+        </div>
+
+        <div class="film__chapter is-left" data-range="0.54,0.68">
+          <p class="eyebrow">Chapter III</p>
+          <h2 class="title">Drape that<br /><em>remembers</em></h2>
+          <p class="copy">The Kanjivaram, in vermilion and gold. Heavy, lustrous, and woven to be handed down to a daughter, and to hers.</p>
+        </div>
+
+        <div class="film__chapter is-right" data-range="0.72,0.86">
+          <p class="eyebrow">Chapter IV</p>
+          <h2 class="title">Every milestone,<br /><em>its own silk</em></h2>
+          <p class="copy">Royal Mysore blues. Banarasi greens heavy with brocade. A saree for the wedding, the first festival, the quiet anniversary.</p>
+        </div>
+
+        <div class="film__chapter is-center" data-range="0.9,1.01">
+          <p class="eyebrow">Continue</p>
+          <h2 class="title title--xl">Now, watch it<br /><em>being woven</em></h2>
+        </div>
+
+        <div class="film__hud" aria-hidden="true">
+          <div class="film__rail"><span id="filmRail"></span></div>
+          <p class="film__frame"><span id="filmFrame">0001</span> / <span id="filmTotal">0376</span></p>
+        </div>
+
+        <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+          <span>Scroll to enter</span>
+          <i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3D LOOM ============ -->
+    <section class="loom" id="loom" aria-label="Three signature weaves, rendered in 3D">
+      <div class="loom__sticky">
+        <canvas class="loom__canvas" id="loomCanvas"></canvas>
+        <div class="loom__vignette"></div>
+
+        <div class="loom__chapter is-left" data-range="0.02,0.27">
+          <span class="numeral">I</span>
+          <p class="eyebrow">The Signature Weave</p>
+          <h2 class="title">Kanjivaram</h2>
+          <p class="copy">Three silk threads twisted into one, woven with a contrasting korvai border and a pallu of temple motifs in real silver zari, dipped in gold.</p>
+          <dl class="specs">
+            <div><dt>Silk</dt><dd>Pure mulberry</dd></div>
+            <div><dt>Zari</dt><dd>Silver, gold dipped</dd></div>
+            <div><dt>Loom</dt><dd>21 days</dd></div>
+          </dl>
+        </div>
+
+        <div class="loom__chapter is-right" data-range="0.31,0.56">
+          <span class="numeral">II</span>
+          <p class="eyebrow">From the Ghats of Varanasi</p>
+          <h2 class="title">Banarasi</h2>
+          <p class="copy">Brocade so dense it holds its shape like a painting. Mughal florals and creeping vines, woven in emerald silk with kadhua technique, one motif at a time.</p>
+          <dl class="specs">
+            <div><dt>Silk</dt><dd>Katan</dd></div>
+            <div><dt>Weave</dt><dd>Kadhua brocade</dd></div>
+            <div><dt>Loom</dt><dd>35 days</dd></div>
+          </dl>
+        </div>
+
+        <div class="loom__chapter is-left" data-range="0.6,0.83">
+          <span class="numeral">III</span>
+          <p class="eyebrow">The Royal Court of Mysore</p>
+          <h2 class="title">Mysore Silk</h2>
+          <p class="copy">Soft as water and light on the shoulder. Sapphire silk with a crimson border and gold coin buttas, a weave once reserved for the Wodeyar court.</p>
+          <dl class="specs">
+            <div><dt>Silk</dt><dd>Crepe mulberry</dd></div>
+            <div><dt>Zari</dt><dd>0.65% gold</dd></div>
+            <div><dt>Loom</dt><dd>14 days</dd></div>
+          </dl>
+        </div>
+
+        <div class="loom__chapter is-center loom__finale" data-range="0.88,1.01">
+          <p class="eyebrow">The Collection</p>
+          <h2 class="title title--xl">Woven by hand.<br /><em>Worn for generations.</em></h2>
+          <a href="#collections" class="btn btn--gold" data-link data-magnetic><span>Explore the Collection</span></a>
+        </div>
+
+        <div class="loom__hud">
+          <p class="loom__hint" aria-hidden="true">Drag to orbit in 3D</p>
+          <div class="loom__progress" role="navigation" aria-label="3D weave acts">
+            <button type="button" class="is-active" data-act="0.15" aria-label="Act I: Kanjivaram">I</button>
+            <button type="button" data-act="0.43" aria-label="Act II: Banarasi">II</button>
+            <button type="button" data-act="0.72" aria-label="Act III: Mysore Silk">III</button>
+            <button type="button" data-act="0.96" aria-label="Act IV: The Collection">IV</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HERITAGE ============ -->
+    <section class="heritage section" id="heritage">
+      <div class="temple-border" aria-hidden="true"></div>
+      <div class="wrap heritage__grid">
+        <div class="heritage__media reveal-mask">
+          <img src="/images/store-entrance.webp" alt="The carved teak entrance of the Sumya Silks showroom" decoding="async" data-parallax="0.08" />
+        </div>
+        <div class="heritage__text">
+          <p class="eyebrow reveal">Our Heritage</p>
+          <h2 class="title split">Three generations at the loom, one promise of purity.</h2>
+          <p class="copy reveal">In 1962, Sri Ramanathan Iyer set up four pit looms behind his home on Gandhi Road. He had one rule: no saree would leave his house unless he would gift it to his own mother.</p>
+          <p class="copy reveal">Today, more than four hundred weaving families across Kanchipuram, Varanasi and Mysore work with us. The rule has not changed.</p>
+          <a href="#craft" class="link-arrow reveal" data-link>Read about our craft <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="wrap stats">
+        <div class="stat reveal"><strong data-count="62">0</strong><span>Years of weaving</span></div>
+        <div class="stat reveal"><strong data-count="400" data-suffix="+">0</strong><span>Weaving families</span></div>
+        <div class="stat reveal"><strong data-count="12000" data-suffix="+">0</strong><span>Sarees in the showroom</span></div>
+        <div class="stat reveal"><strong data-count="100" data-suffix="%">0</strong><span>Silk Mark certified</span></div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Kanjivaram</span><i></i><span>Banarasi</span><i></i><span>Mysore Silk</span><i></i><span>Paithani</span><i></i><span>Patola</span><i></i><span>Chanderi</span><i></i><span>Gadwal</span><i></i><span>Arani</span><i></i>
+        <span>Kanjivaram</span><i></i><span>Banarasi</span><i></i><span>Mysore Silk</span><i></i><span>Paithani</span><i></i><span>Patola</span><i></i><span>Chanderi</span><i></i><span>Gadwal</span><i></i><span>Arani</span><i></i>
+      </div>
+    </div>
+
+    <!-- ============ COLLECTIONS ============ -->
+    <section class="collections section" id="collections">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow reveal">The Collections</p>
+          <h2 class="title split">Chosen for the moments that matter.</h2>
+          <p class="copy reveal">Each piece is hand selected from the loom, inspected thread by thread, and carries the Silk Mark of purity.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal" data-tilt style="--pos: 50% top">
+            <div class="card__media">
+              <div class="card__bgWrap"><img class="card__bg" src="/images/3d/kanjivaram-red-card-bg.webp" alt="" aria-hidden="true" decoding="async" /></div>
+              <span class="card__arch" aria-hidden="true"></span>
+              <img class="card__fg" src="/images/3d/kanjivaram-red-card-fg.webp" alt="A woman in a vermilion Kanjivaram silk saree with gold zari border" decoding="async" />
+            </div>
+            <div class="card__body">
+              <p class="card__tag">Bridal</p>
+              <h3>Vermilion Kanjivaram</h3>
+              <p class="card__meta">Pure zari, temple korvai border</p>
+              <p class="card__price">From &#8377; 48,000</p>
+            </div>
+          </article>
+          <article class="card reveal" data-tilt style="--pos: 51% top">
+            <div class="card__media">
+              <div class="card__bgWrap"><img class="card__bg" src="/images/3d/banarasi-green-card-bg.webp" alt="" aria-hidden="true" decoding="async" /></div>
+              <span class="card__arch" aria-hidden="true"></span>
+              <img class="card__fg" src="/images/3d/banarasi-green-card-fg.webp" alt="A woman in an emerald Banarasi brocade saree" decoding="async" />
+            </div>
+            <div class="card__body">
+              <p class="card__tag">Festive</p>
+              <h3>Emerald Banarasi</h3>
+              <p class="card__meta">Kadhua brocade, katan silk</p>
+              <p class="card__price">From &#8377; 36,500</p>
+            </div>
+          </article>
+          <article class="card reveal" data-tilt style="--pos: 56% top">
+            <div class="card__media">
+              <div class="card__bgWrap"><img class="card__bg" src="/images/3d/mysore-blue-card-bg.webp" alt="" aria-hidden="true" decoding="async" /></div>
+              <span class="card__arch" aria-hidden="true"></span>
+              <img class="card__fg" src="/images/3d/mysore-blue-card-fg.webp" alt="A woman in a royal blue Mysore silk saree with gold buttas" decoding="async" />
+            </div>
+            <div class="card__body">
+              <p class="card__tag">Heirloom</p>
+              <h3>Sapphire Mysore</h3>
+              <p class="card__meta">Crepe silk, gold coin buttas</p>
+              <p class="card__price">From &#8377; 28,000</p>
+            </div>
+          </article>
+          <article class="card reveal" data-tilt style="--pos: 84% bottom">
+            <div class="card__media">
+              <div class="card__bgWrap"><img class="card__bg" src="/images/3d/zari-closeup-card-bg.webp" alt="" aria-hidden="true" decoding="async" /></div>
+              <span class="card__arch" aria-hidden="true"></span>
+              <img class="card__fg" src="/images/3d/zari-closeup-card-fg.webp" alt="Close view of a peach silk saree with peacock zari motifs" decoding="async" />
+            </div>
+            <div class="card__body">
+              <p class="card__tag">Limited</p>
+              <h3>Peacock Pallu</h3>
+              <p class="card__meta">Hand drawn jacquard, soft silk</p>
+              <p class="card__price">From &#8377; 54,000</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURE QUOTE ============ -->
+    <section class="feature" aria-label="From the weavers">
+      <div class="feature__bg"><img src="/images/pallu-detail.webp" alt="" decoding="async" data-parallax="0.15" /></div>
+      <div class="feature__inner wrap">
+        <p class="eyebrow reveal">From the Loom</p>
+        <blockquote class="split">A saree is not sold. It is passed from one pair of hands to another, and it remembers every one of them.</blockquote>
+        <p class="feature__cite reveal">Lakshmi Ammal, master weaver, 41 years at the loom</p>
+      </div>
+    </section>
+
+    <!-- ============ CRAFT ============ -->
+    <section class="craft section" id="craft">
+      <div class="wrap">
+        <div class="section-head is-center">
+          <p class="eyebrow reveal">The Craft</p>
+          <h2 class="title split">From cocoon to heirloom, in four acts.</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <svg class="step__icon" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+              <ellipse cx="40" cy="40" rx="16" ry="24" /><path d="M28 28 C36 34 44 34 52 28 M26 40 C35 46 45 46 54 40 M28 52 C36 58 44 58 52 52" />
+            </svg>
+            <h3>Reeling the silk</h3>
+            <p>Mulberry cocoons from Karnataka are boiled and reeled by hand. Three fine filaments are twisted into one, giving Kanjivaram its weight.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <svg class="step__icon" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+              <path d="M18 30 H62 L56 64 H24 Z" /><path d="M24 40 C32 36 48 44 56 40" /><path d="M40 12 C46 20 46 24 40 28 C34 24 34 20 40 12Z" />
+            </svg>
+            <h3>Dyeing in the river</h3>
+            <p>Hanks are dyed in copper vats, then washed in the Vegavathi. Its mineral water is said to give our reds their depth.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <svg class="step__icon" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+              <circle cx="40" cy="40" r="22" /><circle cx="40" cy="40" r="10" /><path d="M40 18 V8 M40 72 V62 M18 40 H8 M72 40 H62" />
+            </svg>
+            <h3>Drawing the zari</h3>
+            <p>Pure silver wire is drawn, flattened, wound around silk and electroplated with 24 carat gold. Every reel is tested before it touches the loom.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <svg class="step__icon" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+              <path d="M14 16 H66 M14 64 H66" /><path d="M22 16 V64 M32 16 V64 M42 16 V64 M52 16 V64 M62 16 V64" /><path d="M14 34 H66 M14 46 H66" />
+            </svg>
+            <h3>Weaving by hand</h3>
+            <p>Two weavers share one pit loom for up to five weeks. The border and body are woven separately and interlocked with the korvai technique.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ STORE ============ -->
+    <section class="store section" id="store" aria-label="The showroom">
+      <div class="wrap store__grid">
+        <div class="store__text">
+          <p class="eyebrow reveal">The Showroom</p>
+          <h2 class="title split">A private viewing, the way it was always done.</h2>
+          <p class="copy reveal">Sit with a family member of the house, take a cup of filter coffee, and let us unfold the sarees for you one by one. Bridal consultations are available by appointment, seven days a week.</p>
+          <ul class="perks reveal">
+            <li>Personal bridal stylist</li>
+            <li>Silk Mark certificate with every saree</li>
+            <li>Blouse tailoring in five days</li>
+            <li>Insured shipping to 40 countries</li>
+          </ul>
+        </div>
+        <div class="store__media reveal-mask">
+          <img src="/images/store-interior.webp" alt="Inside the Sumya Silks showroom, shelves of folded silk sarees and carved stone pillars" decoding="async" data-parallax="0.08" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="visit section" id="visit">
+      <div class="temple-border" aria-hidden="true"></div>
+      <div class="wrap visit__grid">
+        <div class="visit__info">
+          <p class="eyebrow reveal">Visit Us</p>
+          <h2 class="title split">Come, sit with the silk.</h2>
+          <div class="visit__blocks">
+            <div class="reveal">
+              <h4>Flagship</h4>
+              <p>14 Gandhi Road<br />Kanchipuram, Tamil Nadu 631501</p>
+            </div>
+            <div class="reveal">
+              <h4>Hours</h4>
+              <p>Monday to Sunday<br />10:00 am to 9:00 pm</p>
+            </div>
+            <div class="reveal">
+              <h4>Concierge</h4>
+              <p><a href="tel:+914427220000">+91 44 2722 0000</a><br /><a href="mailto:concierge@sumyasilks.com">concierge@sumyasilks.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="form reveal" id="bookingForm" novalidate>
+          <h3>Book a private viewing</h3>
+          <div class="field">
+            <input type="text" id="fName" name="name" placeholder=" " required autocomplete="name" />
+            <label for="fName">Full name</label>
+          </div>
+          <div class="field">
+            <input type="tel" id="fPhone" name="phone" placeholder=" " required autocomplete="tel" />
+            <label for="fPhone">Phone number</label>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <input type="date" id="fDate" name="date" placeholder=" " required />
+              <label for="fDate">Preferred date</label>
+            </div>
+            <div class="field">
+              <select id="fOccasion" name="occasion" required>
+                <option value="" disabled selected hidden></option>
+                <option>Wedding</option>
+                <option>Festival</option>
+                <option>Gifting</option>
+                <option>Just browsing</option>
+              </select>
+              <label for="fOccasion">Occasion</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--gold btn--block" data-magnetic><span>Request Appointment</span></button>
+          <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <p class="footer__big">Sumya<em>Silks</em></p>
+        <form class="newsletter" id="newsletter" novalidate>
+          <label for="nEmail">Letters from the loom, once a season</label>
+          <div>
+            <input type="email" id="nEmail" placeholder="Your email address" required />
+            <button type="submit" aria-label="Subscribe">&rarr;</button>
+          </div>
+        </form>
+      </div>
+      <div class="footer__cols">
+        <div><h5>Shop</h5><a href="#collections" data-link>Bridal</a><a href="#collections" data-link>Festive</a><a href="#collections" data-link>Heirloom</a><a href="#collections" data-link>Limited editions</a></div>
+        <div><h5>House</h5><a href="#heritage" data-link>Heritage</a><a href="#craft" data-link>Craft</a><a href="#visit" data-link>Showroom</a><a href="#visit" data-link>Appointments</a></div>
+        <div><h5>Care</h5><a href="#visit" data-link>Silk care guide</a><a href="#visit" data-link>Shipping</a><a href="#visit" data-link>Authenticity</a><a href="#visit" data-link>Contact</a></div>
+        <div><h5>Follow</h5><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">Pinterest</a><a href="#" rel="noopener">YouTube</a></div>
+      </div>
+      <div class="footer__base">
+        <p>&copy; <span id="year">2026</span> Sumya Silks. Handwoven in India.</p>
+        <p>Silk Mark Organisation of India, Licence No. KA 0000</p>
+      </div>
+    </div>
+  </footer>
+
+  <noscript><style>.loader{display:none}</style></noscript>
+  <script>
+    if (location.protocol === 'file:') {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.remove('is-loading');
+        document.body.style.cssText = 'margin:0;min-height:100vh;display:grid;place-items:center;background:#12060a;color:#f4ecdc;font-family:Georgia,serif;text-align:center;padding:32px;box-sizing:border-box;';
+        document.body.innerHTML =
+          '<div style="max-width:520px;border:1px solid rgba(214,178,106,0.35);padding:44px 36px;border-radius:8px;background:#1c0a0e;">' +
+          '<p style="letter-spacing:0.28em;text-transform:uppercase;font-size:11px;color:#d6b26a;margin:0 0 16px;">Sumya Silks</p>' +
+          '<h1 style="font-weight:400;font-size:34px;line-height:1.15;margin:0 0 18px;">Open via Local Server</h1>' +
+          '<p style="font-family:system-ui,sans-serif;font-size:15px;line-height:1.65;color:rgba(244,236,220,0.8);margin:0 0 24px;">Browsers block ES modules and 3D WebGL scripts over <code>file://</code>. Double-click <code>start-website.bat</code> in the project folder or run <code>npm run dev</code>, then open the link below.</p>' +
+          '<a href="http://localhost:5173" style="display:inline-block;padding:14px 30px;border-radius:999px;background:#d6b26a;color:#12060a;text-decoration:none;font-family:system-ui,sans-serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;">Open http://localhost:5173</a>' +
+          '</div>';
+      });
+    }
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

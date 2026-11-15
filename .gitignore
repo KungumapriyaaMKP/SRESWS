@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+*.mp4
+.DS_Store
+Thumbs.db
+chrome-profile-*
